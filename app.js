@@ -5,10 +5,6 @@ async function getMeteoOfDay() {
     try {
         const response = await fetch(API_URL);
         const meteoOfDay = await response.json();
-        console.log(meteoOfDay)
-        console.log(meteoOfDay.hourly.time[1])
-        const datei = new Date(meteoOfDay.hourly.time[1])
-        console.log(datei.getHours())
         domUpdate(meteoOfDay);
 
     } catch (error) {
